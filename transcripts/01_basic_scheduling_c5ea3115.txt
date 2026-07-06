@@ -1,0 +1,8 @@
+# Scenario: Basic appointment scheduling (01_basic_scheduling)
+# Target bug probed: Normal happy-path booking flow — baseline for comparison.
+
+[ 17.01s] PATIENT (bot): **Acknowledge Appointment Start**
+
+Okay, I'm now fully prepared to begin this role-play scenario. I'm focusing on acknowledging the start of the check-up appointment, awaiting the patient's opening statement, per instructions. I'm ready for the conversation to start, so that I can respond appropriately.
+
+

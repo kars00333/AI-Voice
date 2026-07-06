@@ -1,0 +1,15 @@
+{
+  "call_id": "01_basic_scheduling_6c8868c4",
+  "scenario_id": "01_basic_scheduling",
+  "scenario_name": "Basic appointment scheduling",
+  "target_bug": "Normal happy-path booking flow \u2014 baseline for comparison.",
+  "success_signal": "Agent offers and confirms a specific weekday afternoon slot next week.",
+  "start_time": 1783375446.480098,
+  "ended": true,
+  "twilio_call_sid": "CAd4986aa7bbdc1e16d4dcb8c0e30e2496",
+  "end_time": 1783375453.083605,
+  "duration_sec": 6.6,
+  "final_status": "completed",
+  "transcript_path": "/Users/karson/Documents/AI-Healthcare/voicebot/transcripts/01_basic_scheduling_6c8868c4.txt",
+  "recording_path": "/Users/karson/Documents/AI-Healthcare/voicebot/recordings/CAd4986aa7bbdc1e16d4dcb8c0e30e2496.mp3"
+}

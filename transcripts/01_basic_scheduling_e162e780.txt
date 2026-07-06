@@ -1,0 +1,2 @@
+# Scenario: Basic appointment scheduling (01_basic_scheduling)
+# Target bug probed: Normal happy-path booking flow — baseline for comparison.

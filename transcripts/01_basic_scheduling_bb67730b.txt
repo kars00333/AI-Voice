@@ -1,0 +1,8 @@
+# Scenario: Basic appointment scheduling (01_basic_scheduling)
+# Target bug probed: Normal happy-path booking flow — baseline for comparison.
+
+[ 15.94s] PATIENT (bot): **Initiating Call Protocols**
+
+Okay, I'm starting the call with the patient's opening line: "Hi, I'd like to schedule a check-up appointment for sometime next week if possible." As the AI agent, I'll need to respond smoothly. I'll confirm the check-up request and then move to verify the patient's identity using their name and date of birth before proceeding with scheduling. My goal is a friendly, professional interaction.
+
+
