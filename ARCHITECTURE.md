@@ -32,3 +32,13 @@ looking for specific failure patterns (wrong commitments, hallucinated policy,
 mishandled interruptions, etc.), producing a draft bug report that we then
 manually reviewed and cross-checked against the recordings before finalizing
 `reports/BUG_REPORT.md`.
+## At a glance
+
+| Layer | Decision | Why |
+|---|---|---|
+| Telephony | Twilio (Programmable Voice + `<Stream>`) | Best-documented outbound calling + recording + media streaming support |
+| Bot brain | Google Gemini Live API (speech-to-speech) over Twilio Media Streams | Single streaming session avoids the STT→LLM→TTS latency stacking that causes dead-air pauses |
+| Recording | Twilio dual-channel call recording | Native, reliable, gives separated tracks for free |
+| Transcription | Gemini's own input/output audio transcription channels | Both sides distinguishable in the transcript, generated live during the call |
+| Analysis | Gemini pass over each transcript with a fixed bug-finding rubric | Consistent bug categorization across every call, then manually verified |
+| Persona/scenario engine | System prompt per call defining goal + traits, not a script | Brief requires "real user" behavior, not a benchmark runner |
