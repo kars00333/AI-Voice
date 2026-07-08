@@ -1,0 +1,15 @@
+{
+  "call_id": "02_reschedule_259fb7a1",
+  "scenario_id": "02_reschedule",
+  "scenario_name": "Reschedule existing appointment",
+  "target_bug": "Tests whether the agent can handle context about an existing booking rather than just creating a new one blindly.",
+  "success_signal": "Agent locates or acknowledges the existing appointment and confirms a new time.",
+  "start_time": 1783457251.002771,
+  "ended": false,
+  "twilio_call_sid": "CA51a478b9d2785c92a0e6eb40b736d5e5",
+  "end_time": 1783457405.458271,
+  "duration_sec": 154.5,
+  "final_status": "completed",
+  "transcript_path": "/Users/karson/Documents/AI-Healthcare/voicebot/transcripts/02_reschedule_259fb7a1.txt",
+  "recording_path": "/Users/karson/Documents/AI-Healthcare/voicebot/recordings/CA51a478b9d2785c92a0e6eb40b736d5e5.mp3"
+}

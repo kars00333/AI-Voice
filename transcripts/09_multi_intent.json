@@ -1,0 +1,15 @@
+{
+  "call_id": "09_multi_intent_44d8fa9c",
+  "scenario_id": "09_multi_intent",
+  "scenario_name": "Multi-intent call: hours + scheduling",
+  "target_bug": "Tests conversation steering across multiple intents in a single call, not just single-intent handling.",
+  "success_signal": "Agent handles the topic shift smoothly and carries context from the first question into the booking flow.",
+  "start_time": 1783458516.3614411,
+  "ended": false,
+  "twilio_call_sid": "CAfe329660f0db5755df10fc71ffddf7c5",
+  "end_time": 1783458706.035655,
+  "duration_sec": 189.7,
+  "final_status": "completed",
+  "transcript_path": "/Users/karson/Documents/AI-Healthcare/voicebot/transcripts/09_multi_intent_44d8fa9c.txt",
+  "recording_path": "/Users/karson/Documents/AI-Healthcare/voicebot/recordings/CAfe329660f0db5755df10fc71ffddf7c5.mp3"
+}

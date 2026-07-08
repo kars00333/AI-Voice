@@ -1,0 +1,10 @@
+# Scenario: Office hours question (05_office_hours)
+# Target bug probed: Factual accuracy check — flags vague, contradictory, or hallucinated hours.
+
+[ 20.77s] PATIENT (bot): Hi, quick question — what are your office hours during the week?
+[ 41.47s] PATIENT (bot): Oh, okay, that's helpful. And are you open on Saturdays too?
+[ 41.47s] PRACTICE AGENT:  We're open Monday, Tuesday and Thursday from 9:00 a.m. to 4:00 p.m. Wednesday from 12:00 p.m. to 7:00 p.m. and Friday from 9:00 a.m. to 12:00 p.m. Let me go, if you hear anything else?
+[ 57.65s] PATIENT (bot): Got it. No, not scheduling just yet, just checking. Thanks!
+[ 57.65s] PRACTICE AGENT:  We're closed on Saturdays. If you need to schedule or change an appointment, I can help with that during our weekday hours.
+[ 68.92s] PATIENT (bot): Will do. Thanks again!
+[ 68.92s] PRACTICE AGENT:  No problem. If you have any other questions about the clinic or our services, just let me know.

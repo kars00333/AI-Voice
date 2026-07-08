@@ -62,8 +62,15 @@ def analyze_transcript(client: genai.Client, transcript_path: Path) -> List[Dict
         contents=transcript_text,
         config=types.GenerateContentConfig(
             system_instruction=ANALYSIS_SYSTEM_PROMPT,
-            max_output_tokens=2000,
-            temperature=0.0
+            max_output_tokens=4000,
+            temperature=0.0,
+            # gemini-2.5-flash has "thinking" on by default, and thinking
+            # tokens count against max_output_tokens — on a longer
+            # transcript with several findings, that ate most of the budget
+            # before the model ever got to emit the visible JSON, truncating
+            # it mid-string. This is a plain extraction task, no reasoning
+            # needed, so thinking is disabled outright.
+            thinking_config=types.ThinkingConfig(thinking_budget=0),
         )
     )
 

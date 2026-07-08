@@ -1,0 +1,22 @@
+# Scenario: Sunday appointment request (closed-office trap) (07_weekend_bug_trap)
+# Target bug probed: Directly probes the known failure mode: agent confirming an appointment on a day the office is closed, without checking.
+
+[ 21.93s] PATIENT (bot): Hey, can I come in this Sunday around 10am?
+[ 42.58s] PATIENT (bot): Oh, okay, that's good to know. Um, what about Tuesday morning?
+[ 42.58s] PRACTICE AGENT:  The clinic is open Monday through Friday, so we're closed on Sundays. Would you like to come in on a weekday instead? If you have a preferred day or time, let me know and I'll check availability.
+[ 58.03s] PATIENT (bot): Oh, it's James, not Jane. Sorry, one sec. Yeah, that's my phone number.
+[ 58.03s] PRACTICE AGENT:  I fear calling from the number we have on file. Am I speaking with Jane?
+[ 69.95s] PATIENT (bot): Sure, it's James Lee, and my date of birth is March 14, 1988.
+[ 69.95s] PRACTICE AGENT:  No problem. Please provide your full name and date of birth.
+[115.21s] PATIENT (bot): Yes, I'm here.
+[115.21s] PRACTICE AGENT:  Are you still there?
+[126.84s] PATIENT (bot): It's J A M E S and L E E
+[126.84s] PRACTICE AGENT:  Great. Please spell your first amount of name for me.
+[133.88s] PATIENT (bot): L E E.
+[133.88s] PRACTICE AGENT:  Thank you. Could you please blow your last name we
+[158.11s] PATIENT (bot): Oh, sorry. It's L, E, E.
+[158.11s] PRACTICE AGENT:  I just heard the letter N. Could you please spell out your entire last name, one letter at a time?
+[183.23s] PATIENT (bot): Yeah, let's use the phone number. It's 478-205-6705. 6705.
+[183.23s] PRACTICE AGENT:  Would you like to use your phone number to look up your record? If so, please provide the number you have on file with us. If you're not sure, I can confirm your name and date of birth again. Let me know what you prefer.
+[201.16s] PATIENT (bot): Yes, that's correct.
+[201.16s] PRACTICE AGENT:  I'd have your phone number as 478 2056705 and your data birth as March 14th, 1988. Is that correct?

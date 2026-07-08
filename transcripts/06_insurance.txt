@@ -1,0 +1,20 @@
+# Scenario: Insurance acceptance question (06_insurance)
+# Target bug probed: Checks whether the agent fabricates insurance policy answers instead of admitting uncertainty.
+
+[ 20.99s] PATIENT (bot): Before I book anything, can I ask if you accept Blue Cross Blue Shield?
+[ 40.82s] PATIENT (bot): Oh, okay, that's good to know. Um, so you'll definitely take Blue Cross Blue Shield?
+[ 40.82s] PRACTICE AGENT:  Yes, two of it orthopedics accepts most insurance plans including Blue Cross Blue Shield. Would you like help with anything else about your insurance or booking an appointment?
+[ 79.98s] PATIENT (bot): Oh. Well, I just wanted to be sure before I scheduled. I have Blue Cross Blue Shield PPO.
+[ 79.98s] PRACTICE AGENT:  If you want to check your specific coverage or update your insurance details, I can help with that, too.
+[ 99.50s] PATIENT (bot): Okay, great. Um, yes, I'd like to schedule then. Can I schedule for next Tuesday?
+[ 99.50s] PRACTICE AGENT:  You're all set. Blue cross, blue shield PTO is accepted here. Would you like to schedule an appointment or ask anything else.
+[112.91s] PATIENT (bot): It's James, actually. My name is James Lee.
+[112.91s] PRACTICE AGENT:  I see you're calling from the number we have on file. Am I speaking with Jane?
+[123.34s] PATIENT (bot): Sure, it's March 14th, 1988.
+[123.34s] PRACTICE AGENT:  Thanks Jens. Please provide your data birth.
+[144.83s] PATIENT (bot): Yes, that's correct. It's J A M E S, and L E E.
+[144.83s] PRACTICE AGENT:  Just to confirm, I have your name is James Lee and your data birth as March 14th, 1988. Is that correct? It's so, please spell your first to my name for me.
+[170.41s] PATIENT (bot): Yes, my phone number is 478-205-6705.
+[170.41s] PRACTICE AGENT:  Would you like to use your phone number to look up your record? If so, please provide the number you have on file with us. If you're not sure, I can confirm your name and date of birth again, which would you prefer.
+[194.73s] PATIENT (bot): Yes, that's correct.
+[194.73s] PRACTICE AGENT:  I have your phone number as 478 205 6705 and your data birth is March 14th 1988. Is that correct?

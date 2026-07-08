@@ -1,0 +1,16 @@
+# Scenario: Unclear request with interruptions (08_interruption_unclear)
+# Target bug probed: Tests turn-taking robustness and whether the agent recovers cleanly from a barge-in / unclear opening.
+
+[ 22.39s] PATIENT (bot): Hi, um, I need to come in for something, my back's been bothering me...
+[ 39.02s] PATIENT (bot): Oh, sorry, one sec... No, it's James, James Lee.
+[ 39.02s] PRACTICE AGENT:  I fear calling from the number we have on file. Am I speaking with Jane?
+[ 49.47s] PATIENT (bot): Sure, it's March 14th, 1988.
+[ 49.47s] PRACTICE AGENT:  Please provide your data first.
+[ 72.18s] PATIENT (bot): Yes that's correct. It's J A M E S, and last name is L E E.
+[ 72.18s] PRACTICE AGENT:  and your date of birth as March 14th, 1988. Is that correct? If so, could you please spell your first and last name for me?
+[ 97.15s] PATIENT (bot): Um, I think it's 478-205-6705.
+[ 97.15s] PRACTICE AGENT:  Would you like to use the phone number you have on file with us to look up your record? If so, please tell me the number you have listed. If you're not sure, just let me know.
+[119.51s] PATIENT (bot): Yes, that's right.
+[119.51s] PRACTICE AGENT:  I have your phone number is 478 2056705 and your date of birth as March 14th, 1988. Is that correct?
+[146.00s] PATIENT (bot): Hello? Oh, okay. Thanks.
+[146.00s] PRACTICE AGENT:  I can't perceive further right now, but I can make sure our clinic support team follows up with you. Please hold while I get this started. Connecting you to a representative. Please wait. Hello. You've reached the pretty good AI test line. Goodbye.

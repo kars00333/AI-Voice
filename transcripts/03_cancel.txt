@@ -1,0 +1,18 @@
+# Scenario: Cancel appointment (03_cancel)
+# Target bug probed: Checks the agent doesn't force a reschedule flow when the caller explicitly wants cancellation.
+
+[ 20.64s] PATIENT (bot): Hi, I need to cancel my upcoming appointment, please.
+[ 34.63s] PATIENT (bot): It's James, not Jane. And yes, that's me.
+[ 34.63s] PRACTICE AGENT:  I see you're calling from the number we have on file. Am I speaking with Jane?
+[ 46.30s] PATIENT (bot): Sure, it's March 14th, 1988.
+[ 46.30s] PRACTICE AGENT:  Thanks James. Please provide your date of birth.
+[ 56.14s] PATIENT (bot): It's Lee, L E E.
+[ 56.14s] PRACTICE AGENT:  Could you please tell me your last name as well?
+[ 79.43s] PATIENT (bot): That is correct.
+[ 79.43s] PRACTICE AGENT:  Just to confirm, I have your name as James Lee and your date of birth is March 14th, 1988. Is that correct?
+[100.23s] PATIENT (bot): Uh, yes, it's 478-205-6705.
+[100.23s] PRACTICE AGENT:  Would you like to use your phone number to look up your record? If so, please tell me the number you have on file with us. If you're not sure, just let me know.
+[119.26s] PATIENT (bot): Yes, that's correct.
+[119.26s] PRACTICE AGENT:  I had her phone number as 478205 6705 and your data birth is March 14th, 1988. Is that correct?
+[146.77s] PATIENT (bot): Oh, I just wanted to cancel the appointment without rescheduling.
+[146.77s] PRACTICE AGENT:  I can't proceed further right now, but I can make sure our critic support team falls up with you. Please hold while I connect you to our patient support team. Connecting you to a representative. Please wait. Hello, you reached the pretty good AI test line. Goodbye

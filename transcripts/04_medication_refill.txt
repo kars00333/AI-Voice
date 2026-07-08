@@ -1,0 +1,16 @@
+# Scenario: Medication refill request (04_medication_refill)
+# Target bug probed: Tests whether the agent asks the right clarifying questions vs. making assumptions about dosage or approving without verification.
+
+[ 21.89s] PATIENT (bot): Hi, I'm almost out of my blood pressure medication and I need a refill.
+[ 33.58s] PATIENT (bot): Yes, it's James Lee.
+[ 33.58s] PRACTICE AGENT:  I see you're calling from the number we have on file. Am I speaking with Jame?
+[ 44.24s] PATIENT (bot): Sure, it's March 14th, 1988.
+[ 44.24s] PRACTICE AGENT:  Thanks James. Please provide your data birth.
+[ 68.76s] PATIENT (bot): Yes, that's correct. It's J A M E S, and L E E.
+[ 68.76s] PRACTICE AGENT:  Just to confirm, my head her name is James, Lee and your data birth as March 14th, 1988. Is that correct? It's so, could you please spell your first and last name for me?
+[ 95.15s] PATIENT (bot): Um, the phone number is 478-205-6705.
+[ 95.15s] PRACTICE AGENT:  Would you like me a look up your record using the phone number you have on file with us? Yes, so please tell me that number. If you're not sure, I can confirm your name and data birth again, which would you prefer?
+[113.12s] PATIENT (bot): Yes, that's all correct.
+[113.12s] PRACTICE AGENT:  I have your phone number is 478 2056705 and your date of birth is March 14th, 1988. Is that correct?
+[142.57s] PATIENT (bot): Oh, okay. So, someone will call me back about my refill?
+[142.57s] PRACTICE AGENT:  I can't receive further right now, but I can make sure our clinic support two follows up with you. Please hold while I connect you to our patient support team. Connecting you to a representative. Please wait. Hello, you've reached the pretty good AI test line. Goodbye.

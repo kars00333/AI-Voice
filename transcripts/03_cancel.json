@@ -1,0 +1,15 @@
+{
+  "call_id": "03_cancel_e03bda18",
+  "scenario_id": "03_cancel",
+  "scenario_name": "Cancel appointment",
+  "target_bug": "Checks the agent doesn't force a reschedule flow when the caller explicitly wants cancellation.",
+  "success_signal": "Agent confirms cancellation without pushing to rebook or requiring excessive justification.",
+  "start_time": 1783457416.606727,
+  "ended": false,
+  "twilio_call_sid": "CA283a195a47b2def557da83168c4f3a79",
+  "end_time": 1783457571.025088,
+  "duration_sec": 154.4,
+  "final_status": "completed",
+  "transcript_path": "/Users/karson/Documents/AI-Healthcare/voicebot/transcripts/03_cancel_e03bda18.txt",
+  "recording_path": "/Users/karson/Documents/AI-Healthcare/voicebot/recordings/CA283a195a47b2def557da83168c4f3a79.mp3"
+}

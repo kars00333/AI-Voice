@@ -1,8 +1,0 @@
-# Scenario: Basic appointment scheduling (01_basic_scheduling)
-# Target bug probed: Normal happy-path booking flow — baseline for comparison.
-
-[ 15.99s] PATIENT (bot): **Initiating the Call**
-
-I'm now ready to start the phone call, adopting the patient persona and adhering to the specific opening phrase. I'll maintain a friendly and direct approach, aiming to book a routine check-up for next week, preferably in the afternoon on any weekday. I'll omit any reference to the recording notice, focusing solely on scheduling.
-
-

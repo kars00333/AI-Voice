@@ -1,0 +1,15 @@
+{
+  "call_id": "08_interruption_unclear_ef336419",
+  "scenario_id": "08_interruption_unclear",
+  "scenario_name": "Unclear request with interruptions",
+  "target_bug": "Tests turn-taking robustness and whether the agent recovers cleanly from a barge-in / unclear opening.",
+  "success_signal": "Agent handles the interruption gracefully, doesn't lose context, and eventually clarifies the actual need.",
+  "start_time": 1783458343.625976,
+  "ended": false,
+  "twilio_call_sid": "CA42cfb378f47e67eb97dca4c101613230",
+  "end_time": 1783458494.9060962,
+  "duration_sec": 151.3,
+  "final_status": "completed",
+  "transcript_path": "/Users/karson/Documents/AI-Healthcare/voicebot/transcripts/08_interruption_unclear_ef336419.txt",
+  "recording_path": "/Users/karson/Documents/AI-Healthcare/voicebot/recordings/CA42cfb378f47e67eb97dca4c101613230.mp3"
+}

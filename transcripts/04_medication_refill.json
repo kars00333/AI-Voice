@@ -1,0 +1,15 @@
+{
+  "call_id": "04_medication_refill_7a602f70",
+  "scenario_id": "04_medication_refill",
+  "scenario_name": "Medication refill request",
+  "target_bug": "Tests whether the agent asks the right clarifying questions vs. making assumptions about dosage or approving without verification.",
+  "success_signal": "Agent gathers correct info (medication, pharmacy, prescriber) and gives a clear next step/timeline.",
+  "start_time": 1783457581.744452,
+  "ended": false,
+  "twilio_call_sid": "CA36aa14eb61a5599d5358e7ad3e9066d6",
+  "end_time": 1783457729.8777752,
+  "duration_sec": 148.1,
+  "final_status": "completed",
+  "transcript_path": "/Users/karson/Documents/AI-Healthcare/voicebot/transcripts/04_medication_refill_7a602f70.txt",
+  "recording_path": "/Users/karson/Documents/AI-Healthcare/voicebot/recordings/CA36aa14eb61a5599d5358e7ad3e9066d6.mp3"
+}

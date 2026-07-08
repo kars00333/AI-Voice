@@ -12,6 +12,16 @@ To add a new scenario: add an entry to SCENARIOS. Nothing else needs to change.
 from dataclasses import dataclass, field
 from typing import List
 
+# Fixed patient identity, used identically across every scenario and every
+# call. Previously each call improvised its own name/DOB from scratch, so
+# the "patient" was someone different every time — fine for a single call,
+# but it meant identity-verification flows couldn't be tested consistently
+# and results weren't reproducible across runs. A single hardcoded identity
+# fixes both.
+PATIENT_NAME = "James Lee"
+PATIENT_DOB = "March 14, 1988"
+PATIENT_PHONE = "478-205-6705"
+
 
 @dataclass
 class Scenario:
@@ -34,6 +44,13 @@ you are an AI, never mention this is a test.
 YOUR GOAL THIS CALL:
 {self.goal}
 
+YOUR IDENTITY (use these EXACT details every single time you're asked — never
+invent a different name, DOB, or phone number, even if asked to repeat or
+spell it out multiple times):
+- Name: {PATIENT_NAME}
+- Date of birth: {PATIENT_DOB}
+- Phone number: {PATIENT_PHONE}
+
 HOW YOU SHOULD BEHAVE:
 {traits}
 
@@ -41,10 +58,15 @@ RULES:
 - Speak naturally, like a real person on the phone. Use filler words occasionally
   ("um", "let me think", "sorry, one sec").
 - Do NOT recite a script. React to what the agent actually says.
+- ALWAYS answer the agent's most recent question or request FIRST, directly,
+  before doing anything else — even if it isn't the thing you called about.
+  A real patient answers what they were just asked instead of talking past it.
+  Only after answering should you return to pursuing your own goal (e.g. by
+  asking a follow-up, or repeating your request if the agent didn't address it).
 - Pursue your goal actively — if the agent is vague, ask a follow-up. If the
-  agent gives you an opening (e.g. asks a question), answer it consistently
-  with a stable set of made-up personal details (pick a name, DOB, and reason
-  for calling at the start of the call and stay consistent with them).
+  agent asks for your name, date of birth, or phone number, answer with the
+  exact identity details above, spelled out if asked — never a different or
+  newly-invented one.
 - Keep the call to a natural length (aim for 1-3 minutes of real dialogue).
   Don't hang up after one exchange, and don't drag it out past your goal.
 - If the agent misunderstands you, correct it once naturally, the way a real
@@ -173,6 +195,43 @@ SCENARIOS: List[Scenario] = [
         opening_line="Hi, I've had a pretty bad fever for two days now and I'm not sure if I should come in or go to urgent care.",
         success_signal="Agent responds appropriately to urgency without overstepping into medical diagnosis, and gives sensible triage guidance (e.g., directs to urgent care/ER for concerning symptoms rather than just booking a routine slot).",
         target_bug="Edge-case robustness — checks the agent doesn't either dismiss urgency or attempt inappropriate medical advice.",
+    ),
+    Scenario(
+        id="11_reschedule_unsure_details",
+        name="Reschedule without remembering exact details",
+        goal="You have an upcoming appointment you need to reschedule, but you don't remember the exact date or time it's currently booked for — just that it's sometime in the next couple weeks.",
+        persona_traits=[
+            "A little scattered/forgetful about the specifics.",
+            "Expects the agent to look up the appointment by name and date of birth rather than you reciting the original booking details.",
+            "Knows roughly why you need to move it (a schedule conflict came up) but not the original slot.",
+        ],
+        opening_line="Hi, I need to reschedule an appointment I have coming up, but honestly I don't remember exactly when it was booked for.",
+        success_signal="Agent looks up the existing appointment (e.g. via name/DOB) instead of requiring the caller to state the exact original date/time, and confirms a new time.",
+        target_bug="Complements 02_reschedule (which assumes the caller states exact original details) by testing whether the agent can actually look up a booking versus just demanding info the caller doesn't have.",
+    ),
+    Scenario(
+        id="12_identity_verification",
+        name="Identity verification consistency check",
+        goal="You're calling to confirm the contact information on file ahead of an upcoming visit, so the agent will need to verify your identity — possibly asking you to repeat or spell your name, DOB, or phone number more than once.",
+        persona_traits=[
+            "Patient and cooperative — happy to repeat or spell out your details as many times as the agent asks.",
+            "If the agent seems to mishear or mis-record a detail, corrects it gently while restating the EXACT SAME identity details — never drifting to a new name, spelling, or DOB partway through.",
+        ],
+        opening_line="Hi, I have an appointment coming up and wanted to double check the contact information you have on file for me is correct.",
+        success_signal="Agent verifies identity without an unreasonable number of repeated confirmations, and correctly confirms/updates the contact info.",
+        target_bug="Probes whether the agent gets stuck in a redundant identity-confirmation loop instead of progressing once identity is verified (a failure mode already observed in testing), while also confirming our own caller consistently gives the same identity details throughout.",
+    ),
+    Scenario(
+        id="13_new_patient_intake",
+        name="New patient establishing care",
+        goal="You've never been seen at this practice before and want to schedule your first appointment — you expect the agent to walk you through whatever new-patient steps are needed (forms, insurance, ID, etc.).",
+        persona_traits=[
+            "Doesn't know the practice's intake process at all — relies entirely on the agent to explain it.",
+            "Patient and willing to listen all the way through a longer, multi-part explanation without cutting in, only asking a follow-up once the agent is actually done.",
+        ],
+        opening_line="Hi, I've never been to your office before and I'd like to schedule my first appointment.",
+        success_signal="Agent correctly identifies this as new-patient intake (not a routine existing-patient booking) and walks the caller through what's needed before or at the visit.",
+        target_bug="Tests whether the agent gives complete new-patient instructions rather than assuming existing-patient context — and, since that explanation is naturally longer and multi-sentence, whether the caller lets the agent actually finish instead of cutting in partway through.",
     ),
 ]
 

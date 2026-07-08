@@ -1,0 +1,20 @@
+# Scenario: Multi-intent call: hours + scheduling (09_multi_intent)
+# Target bug probed: Tests conversation steering across multiple intents in a single call, not just single-intent handling.
+
+[ 20.52s] PATIENT (bot): Hi, where are you guys located, and what are your hours?
+[ 48.50s] PATIENT (bot): Oh okay, that's good to know. Um, I was actually wondering if I could book an appointment.
+[ 48.50s] PRACTICE AGENT:  We're at 1234 recovering weight sweet 200 Austin. The clinic is open Monday, Tuesday and Thursday from 9:00 a.m. to 4:00 p.m. Wednesday from 12:00 p.m. to 7:00 p.m. and Friday from 9:00 a.m. to 12:00 p.m. Is there anything else you like to know?
+[ 66.66s] PATIENT (bot): Oh, sorry, it's James Lee. My phone number is 478-205-6705. Is
+[ 66.66s] PRACTICE AGENT:  you're calling from the number we have on file. Right speaking with Jane.
+[ 78.07s] PATIENT (bot): Sure, it's March 14th, 1988.
+[ 78.07s] PRACTICE AGENT:  Nice James. Please provide your data birth.
+[102.37s] PATIENT (bot): Yes, that's correct. It's J A M E S, and L E E.
+[102.37s] PRACTICE AGENT:  Just to confirm, I have your name as James Lee and your data birth as March 14th, 1988. Is that correct? If so, could you please spell your first in last name for me?
+[129.35s] PATIENT (bot): Oh, um, I think my phone number was 478-205-6705. Is
+[129.35s] PRACTICE AGENT:  Would you like me to look up your record using the phone number you have on file with us? It's so. Please tell me the number you used when you registered. If you're not sure, just confirm your first and last name and data birth from me one more time.
+[148.73s] PATIENT (bot): Yes, that's correct.
+[148.73s] PRACTICE AGENT:  I have your phone number as 478 205 6705 and your data birth as March 14th 1988. Is that correct?
+[167.85s] PATIENT (bot): Oh, um, yes, that would be helpful, thank you.
+[167.85s] PRACTICE AGENT:  I can't perceive further right now, but I can make sure our clinic support team follows up with you. Would you like me to have someone reach out to help you book your appointment?
+[183.34s] PATIENT (bot): Oh. Okay, thank you.
+[183.34s] PRACTICE AGENT:  Connecting you to a representative. Please wait. Hello. You've reached the pretty good AI test line. Goodbye.

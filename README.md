@@ -1,7 +1,7 @@
 # Voice Bot QA Harness
 
 Automated "patient" caller that tests Pretty Good AI's phone agent by placing real
-outbound calls, holding natural voice conversations across 10 scenarios, recording +
+outbound calls, holding natural voice conversations across 13 scenarios, recording +
 transcribing each one, and generating a bug report.
 
 See `ARCHITECTURE.md` for the design rationale.
@@ -15,8 +15,8 @@ See `ARCHITECTURE.md` for the design rationale.
 
 2. **Get accounts/keys**
    - Twilio account with a purchased phone number (this is your single outbound caller ID)
-   - OpenAI API key with Realtime API access
-   - Anthropic API key
+   - Google Gemini API key ([aistudio.google.com](https://aistudio.google.com)) — used for both
+     the live voice bridge and the post-call bug analysis
    - [ngrok](https://ngrok.com) (or similar) for a public HTTPS tunnel to your local machine
 
 3. **Configure environment**
@@ -33,17 +33,14 @@ See `ARCHITECTURE.md` for the design rationale.
 
 ## Run
 
-**Terminal 1** — start the media-stream server (keep this running throughout):
-```bash
-python src/main.py serve
-```
+Each call starts its own local media-stream server in the background — no separate
+process to manage.
 
-**Terminal 2** — place calls:
 ```bash
 # Run a single scenario
 python src/main.py call --scenario 01_basic_scheduling
 
-# Or run the full standard set of 10 scenarios back-to-back
+# Or run every scenario back-to-back
 python src/main.py call-all
 ```
 
@@ -64,14 +61,21 @@ This writes `reports/BUG_REPORT_DRAFT.md`. Review and curate it into
 
 ## Scenarios covered
 
-See `src/scenarios.py` for full detail. Covers: basic scheduling, reschedule, cancel,
-medication refill, office hours, insurance question, a "Sunday appointment" closed-office
-trap, an unclear/interruption-heavy call, a multi-intent call, and an urgent/stress
-edge case.
+See `src/scenarios.py` for full detail.
+
+Core set: basic scheduling, reschedule, cancel, medication refill, office hours,
+insurance question, a "Sunday appointment" closed-office trap, an
+unclear/interruption-heavy call, a multi-intent call, and an urgent/stress edge case.
+
+Additional: rescheduling without remembering the exact original appointment,
+an identity-verification consistency check, and a new-patient intake call.
 
 ## Notes
 
 - Only one Twilio number is used for all test calls (`TWILIO_NUMBER` in `.env`), and all
   calls target `+18054398008` only.
+- The caller's identity (name, date of birth, phone number) is fixed in
+  `src/scenarios.py` rather than improvised per call, so identity-verification
+  behavior is consistent and reproducible across runs.
 - `src/transcriber.py` is an optional fallback for re-checking a recording's transcript
   independently of the live one — not required for normal operation.

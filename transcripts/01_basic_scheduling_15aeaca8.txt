@@ -1,8 +1,0 @@
-# Scenario: Basic appointment scheduling (01_basic_scheduling)
-# Target bug probed: Normal happy-path booking flow — baseline for comparison.
-
-[ 16.02s] PATIENT (bot): **Initiating the Appointment Request**
-
-I've begun role-playing the patient interaction. My focus is on delivering the opening phrase precisely and maintaining a friendly, flexible demeanor. My aim is to book a routine check-up for next week, targeting an afternoon slot on any weekday, which is my main objective as the patient.
-
-

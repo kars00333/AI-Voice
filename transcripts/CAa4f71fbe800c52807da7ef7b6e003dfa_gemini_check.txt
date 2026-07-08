@@ -1,7 +1,0 @@
-[ 0m0s104ms - 0m5s444ms ] Automated Voice: This call may be recorded for quality and training purposes. Para español, oprima el dos.
-[ 0m6s894ms - 0m11s694ms ] Automated Voice: Thank you for calling Pivot Point Orthopedics. Would you like to create a demo patient profile today?
-[ 0m12s304ms - 0m15s604ms ] Automated Voice: I just need your first and last name to get started.
-[ 0m25s204ms - 0m30s244ms ] Automated Voice: Welcome to Pivot Point Orthopedics. Would you like to create a demo patient profile?
-[ 0m30s804ms - 0m32s394ms ] Automated Voice: I just need your first and last name.
-[ 0m40s804ms - 0m41s704ms ] Automated Voice: Are you still there?
-[ 0m50s304ms - 0m52s504ms ] Automated Voice: I am going to end the call now. Goodbye.

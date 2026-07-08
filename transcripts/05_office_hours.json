@@ -1,0 +1,15 @@
+{
+  "call_id": "05_office_hours_7ac7b400",
+  "scenario_id": "05_office_hours",
+  "scenario_name": "Office hours question",
+  "target_bug": "Factual accuracy check \u2014 flags vague, contradictory, or hallucinated hours.",
+  "success_signal": "Agent gives accurate, specific hours rather than vague or contradictory info.",
+  "start_time": 1783457750.898974,
+  "ended": false,
+  "twilio_call_sid": "CA0d412a97cf8c48243ac34047f070da65",
+  "end_time": 1783457830.135134,
+  "duration_sec": 79.2,
+  "final_status": "completed",
+  "transcript_path": "/Users/karson/Documents/AI-Healthcare/voicebot/transcripts/05_office_hours_7ac7b400.txt",
+  "recording_path": "/Users/karson/Documents/AI-Healthcare/voicebot/recordings/CA0d412a97cf8c48243ac34047f070da65.mp3"
+}

@@ -1,0 +1,18 @@
+# Scenario: Basic appointment scheduling (01_basic_scheduling)
+# Target bug probed: Normal happy-path booking flow — baseline for comparison.
+
+[ 21.89s] PATIENT (bot): Hi, I'd like to schedule a check-up appointment for sometime next week if possible.
+[ 34.91s] PATIENT (bot): Oh, sorry, no, my name is James Lee.
+[ 34.91s] PRACTICE AGENT:  I see you're calling from the number we have on file. Am I thinking with Kane?
+[ 44.88s] PATIENT (bot): Sure, it's March 14th, 1988.
+[ 44.88s] PRACTICE AGENT:  Please provide your full data birth.
+[ 88.63s] PATIENT (bot): Sure, it's J A M E S and L E E.
+[ 88.63s] PRACTICE AGENT:  to confirm. I have your name as James Lee and your date of birth as March 14th, 1988. Could you please spell your first and last name for me?
+[109.80s] PATIENT (bot): Oh, um, it's 478-205-6705.
+[109.80s] PRACTICE AGENT:  Would you like to use your phone number to look up your record? If so, please provide the number you have on file with us. If you're not sure, just let me know.
+[128.19s] PATIENT (bot): Yes, that's correct.
+[128.19s] PRACTICE AGENT:  I have your phone number as 478 205 6705 and your data birth as March 14 to 1988. That correct?
+[146.74s] PATIENT (bot): Oh, okay. So I can't schedule the appointment with you now?
+[146.74s] PRACTICE AGENT:  I can't proceed further right now, but I can make sure our critic support team follows up with you. Please hold while I document this for our team.
+[157.85s] PATIENT (bot): Hello?
+[157.85s] PRACTICE AGENT:  Connecting you to a representative. Please wait. Hello, you've reached the pretty good AI test line. Goodbye.

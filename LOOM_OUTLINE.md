@@ -8,40 +8,46 @@ whole thing.
 
 ## 0:00–0:30 — What you built (30 sec)
 - "This is an automated voice bot that calls Pretty Good AI's test line, plays a
-  realistic patient across 10 different scenarios, and produces recordings,
+  realistic patient across 13 different scenarios, and produces recordings,
   transcripts, and a bug report."
-- One sentence on scope: "Built with Twilio for telephony and OpenAI's Realtime API
-  for the actual conversation."
+- One sentence on scope: "Built with Twilio for telephony and Google Gemini's Live
+  API for the actual speech-to-speech conversation."
 
 ## 0:30–1:30 — The key architecture decision (60 sec)
 - Show the layer table or `ARCHITECTURE.md` briefly on screen.
-- Explain the STT→LLM→TTS vs. Realtime API tradeoff in your own words:
+- Explain the STT→LLM→TTS vs. live speech-to-speech tradeoff in your own words:
   "My first instinct was to chain speech-to-text, an LLM, and text-to-speech, but
   that stacks up latency — you get multi-second dead air between turns, which is
   exactly what the brief flags as a rejection risk. Switching to a single
-  speech-to-speech Realtime session got turn latency down to something that
+  speech-to-speech streaming session got turn latency down to something that
   actually sounds like a phone call."
 - If you actually hit this problem during build, say so — this is your "evidence of
-  iteration" moment, make it concrete rather than hypothetical.
+  iteration" moment, make it concrete rather than hypothetical. (You did: the model's
+  own turn-taking needed real tuning — VAD sensitivity, a silence threshold, and a
+  deliberate delay before the bot's opening line so it doesn't talk over the practice
+  line's own greeting.)
 
 ## 1:30–2:30 — Persona design (60 sec)
 - Open `scenarios.py`, show one scenario definition.
 - "Instead of scripting exact lines, each scenario is a goal plus a set of
   personality traits — the model improvises the actual wording each call, which is
   why it doesn't sound like a benchmark script reading questions at the agent."
-- Briefly name 2-3 of the 10 scenarios and why they're interesting (e.g. the Sunday
-  closed-office trap, the interruption/barge-in test).
+- Briefly name 2-3 of the 13 scenarios and why they're interesting (e.g. the Sunday
+  closed-office trap, the interruption/barge-in test, the identity-verification
+  consistency check).
 
 ## 2:30–3:30 — Play a real call clip
 - Cue up your best (or most interesting-bug) recording. Play 20-30 seconds of actual
   audio — this is the single most convincing thing you can show. Pick a moment where
   the conversation flows naturally AND/OR where you can point out the bug live.
-- "Here's the Sunday call — listen to this part, it confirms the appointment without
-  ever checking that we're closed weekends."
+- "Here's a call where the caller clearly states their name is James Lee — listen to
+  this part, the agent asks 'Am I speaking with Jane?' and then gets stuck re-asking
+  for identity info it already has, until it eventually gives up and transfers the
+  call to a dead end."
 
 ## 3:30–4:15 — Bug report + analysis pipeline
 - Show `BUG_REPORT.md` and briefly the analyzer flow: "After each call, I run the
-  transcript through a second Claude pass that flags candidate issues, but I don't
+  transcript through a second Gemini pass that flags candidate issues, but I don't
   ship that raw — I manually verify each one against the recording before it goes in
   the report, so what's here is confirmed."
 

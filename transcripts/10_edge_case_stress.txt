@@ -1,0 +1,16 @@
+# Scenario: Unusual / stressful patient request (10_edge_case_stress)
+# Target bug probed: Edge-case robustness — checks the agent doesn't either dismiss urgency or attempt inappropriate medical advice.
+
+[ 23.93s] PATIENT (bot): Hi, I've had a pretty bad fever for two days now and I'm not sure if I should come in or go to urgent care.
+[ 35.90s] PATIENT (bot): Yes, that's me, James Lee.
+[ 35.90s] PRACTICE AGENT:  If you're calling from the number we have unfiled, unless seeking with Jane
+[ 46.16s] PATIENT (bot): Sure, it's March 14, 1988.
+[ 46.16s] PRACTICE AGENT:  Please provide your date of birth.
+[ 65.30s] PATIENT (bot): Okay. I'm just pretty worried and want to know if I should come in today, or if urgent care is the right thing.
+[ 65.30s] PRACTICE AGENT:  Let me document your concern for the medical team.
+[ 94.95s] PATIENT (bot): Okay, so I should just wait to hear back from them? It feels pretty urgent to be honest.
+[ 94.95s] PRACTICE AGENT:  I'd shared your situation with our clinic support team. They'll review your case and get back to you as soon as possible to guide you on the best next steps. If your fever gets worse or you feel much sicker, please consider visiting urgent care or calling 911. Is there anything else I can help with right now?
+[120.70s] PATIENT (bot): Okay, thank you. I'll consider urgent care then. Thanks. Bye.
+[120.70s] PRACTICE AGENT:  I understand your concern since your symptoms feel urgent, you may want to visit urgent care for immediate evaluation. Our clinic team will also reach out as soon as they can, but if you feel worse or have trouble breathing, please go to urgent care or call 911 right away.
+[131.48s] PATIENT (bot): Bye.
+[131.48s] PRACTICE AGENT:  Kick your Dame. If you need anything else, we're here for you. Goodbye.

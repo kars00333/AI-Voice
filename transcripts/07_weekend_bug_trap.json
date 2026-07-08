@@ -1,0 +1,15 @@
+{
+  "call_id": "07_weekend_bug_trap_a8baeecc",
+  "scenario_id": "07_weekend_bug_trap",
+  "scenario_name": "Sunday appointment request (closed-office trap)",
+  "target_bug": "Directly probes the known failure mode: agent confirming an appointment on a day the office is closed, without checking.",
+  "success_signal": "Agent correctly informs caller the office is closed Sundays and offers the next available weekday \u2014 does NOT falsely confirm a Sunday booking.",
+  "start_time": 1783458093.5531158,
+  "ended": false,
+  "twilio_call_sid": "CA92d4a7dbf58918e461a3cc8ab9e16085",
+  "end_time": 1783458305.065832,
+  "duration_sec": 211.5,
+  "final_status": "in-progress",
+  "transcript_path": "/Users/karson/Documents/AI-Healthcare/voicebot/transcripts/07_weekend_bug_trap_a8baeecc.txt",
+  "recording_path": null
+}

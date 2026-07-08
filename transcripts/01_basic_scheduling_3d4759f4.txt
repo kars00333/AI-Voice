@@ -1,8 +1,0 @@
-# Scenario: Basic appointment scheduling (01_basic_scheduling)
-# Target bug probed: Normal happy-path booking flow — baseline for comparison.
-
-[ 15.71s] PATIENT (bot): **Initiating the Call**
-
-I'm focusing on the initial conversation. My goal is a clear introduction: stating my need for a check-up and the timeframe I'm considering. I'm aiming for directness and efficiency.
-
-
