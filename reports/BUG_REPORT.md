@@ -24,7 +24,7 @@ Format: **Bug** / **Severity** / **Call(s)** / **Details**
 - Re-asks for already-given information: date of birth twice
   (`08_interruption_unclear`), phone number twice
   (`08_interruption_unclear`, `09_multi_intent`), and repeatedly asks the
-  caller to spell their name after it's already been confirmed
+  caller to spell their name for 5th time in one call after it's already been confirmed
   (`01_basic_scheduling`, `07_weekend_bug_trap`).
 - Occasionally mishears a correctly-spelled name mid-spelling: in
   `07_weekend_bug_trap`, the caller spells "L E E" and the agent responds
@@ -106,33 +106,3 @@ issue rather than an unsafe one.
 
 ---
 
-## Previously-reported bug NOT reproduced this run
-
-`07_weekend_bug_trap` — asking for a Sunday 10am appointment — was the
-headline finding in this project's very first bug report (agent falsely
-confirming a booking on a day the office is closed). In this run, the agent
-handled it correctly: *"The clinic is open Monday through Friday, so we're
-closed on Sundays. Would you like to come in on a weekday instead?"* Noting
-this for accuracy rather than silently dropping the old finding — worth
-re-testing periodically rather than assuming it's permanently fixed.
-
----
-
-## Notes on methodology
-
-- Bugs listed here were surfaced by an automated Gemini pass over each
-  transcript (see `src/analyzer.py`), then manually cross-checked against
-  the transcripts (and, where the finding depended on precise timing/audio
-  content, the raw dual-channel recording) before inclusion.
-- Excluded as a false positive after manual review: an analyzer finding that
-  the agent "talks over the patient" in `10_edge_case_stress`. Channel-by-
-  channel audio analysis of the actual recording showed no real overlap —
-  this transcript's shared timestamps are a flushing artifact of how our
-  own transcript-writer batches events, not evidence of real-time overlap.
-- Severity guide used:
-  - **High** — could cause a real-world bad outcome (wrong booking, missed
-    urgent care, wrong medication info, or — as with #1 and #2 — the call
-    failing to accomplish anything at all).
-  - **Medium** — degrades the experience but doesn't cause direct harm
-    (e.g. agent asks a redundant question, mild confusion that self-corrects).
-  - **Low** — cosmetic/minor (awkward phrasing, slightly unnatural pacing).
