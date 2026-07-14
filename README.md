@@ -1,6 +1,6 @@
 # Voice Bot QA Harness
 
-Automated "patient" caller that tests Pretty Good AI's phone agent by placing real
+Automated "patient" caller that tests  AI's phone agent by placing real
 outbound calls, holding natural voice conversations across 13 scenarios, recording +
 transcribing each one, and generating a bug report.
 
