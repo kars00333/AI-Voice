@@ -73,7 +73,7 @@ an identity-verification consistency check, and a new-patient intake call.
 ## Notes
 
 - Only one Twilio number is used for all test calls (`TWILIO_NUMBER` in `.env`), and all
-  calls target `+18054398008` only.
+  calls target `+19191911911(sample)` only.
 - The caller's identity (name, date of birth, phone number) is fixed in
   `src/scenarios.py` rather than improvised per call, so identity-verification
   behavior is consistent and reproducible across runs.
